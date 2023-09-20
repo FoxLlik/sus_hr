@@ -2,16 +2,16 @@
   color: #6e6b7b; }
 
 .flatpickr-calendar .flatpickr-day.today {
-  border-color: #097A7D; }
+  border-color: #8e272b; }
 
 .flatpickr-calendar .flatpickr-day.today:hover {
   background: transparent;
   color: #6e6b7b; }
 
 .flatpickr-calendar .flatpickr-day.selected, .flatpickr-calendar .flatpickr-day.selected:hover {
-  background: #097A7D;
+  background: #8e272b;
   color: #fff;
-  border-color: #097A7D; }
+  border-color: #8e272b; }
 
 .flatpickr-calendar .flatpickr-day.inRange, .flatpickr-calendar .flatpickr-day.inRange:hover {
   background: #f3f2fe;
@@ -19,14 +19,14 @@
   box-shadow: -5px 0 0 #f3f2fe, 5px 0 0 #f3f2fe; }
 
 .flatpickr-calendar .flatpickr-day.startRange, .flatpickr-calendar .flatpickr-day.endRange, .flatpickr-calendar .flatpickr-day.startRange:hover, .flatpickr-calendar .flatpickr-day.endRange:hover {
-  background: #03a3a2  ;
+  background: #C2363C  ;
   color: #fff;
-  border-color: #03a3a2  ; }
+  border-color: #C2363C  ; }
 
 .flatpickr-calendar .flatpickr-day.selected.startRange + .endRange:not(:nth-child(7n + 1)),
 .flatpickr-calendar .flatpickr-day.startRange.startRange + .endRange:not(:nth-child(7n + 1)),
 .flatpickr-calendar .flatpickr-day.endRange.startRange + .endRange:not(:nth-child(7n + 1)) {
-  box-shadow: -10px 0 0 #03a3a2  ; }
+  box-shadow: -10px 0 0 #C2363C  ; }
 
 .flatpickr-calendar .flatpickr-day.flatpickr-disabled, .flatpickr-calendar .flatpickr-day.prevMonthDay, .flatpickr-calendar .flatpickr-day.nextMonthDay {
   color: #dae1e7; }

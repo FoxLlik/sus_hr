@@ -22,7 +22,7 @@
         <div class="col-xl-4 col-lg-5 col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Байгууллагууд</h4>
+                    <h4 class="card-title">Байгууллага</h4>
                 </div>
                 <div class="card-body overflow-auto">
                     <div id="jstree-orgs2-menu"></div>
@@ -143,7 +143,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-12 mt-1">
+                                    <!-- <div class="col-12 mt-1">
                                         <label class="form-label">Тодорхойлолт баталгаажуулагчийн албан тушаал:</label>
                                         <input type="text" id="todorkhoilolt_rank" name="todorkhoilolt_rank" class="form-control" value="{{ serializer.data.todorkhoilolt_rank|default:"" }}" placeholder="Дэд захирал..."  data-msg="Байгууллагын англи нэр оруулна уу" />
                                     </div>
@@ -180,7 +180,7 @@
                                         <label class="form-label">Гарын үсэг захиралын нэр:</label>
                                         <input aria-describedby="helptext" type="text" id="sign_zahiral" name="sign_zahiral" class="form-control" value="{{ serializer.data.sign_zahiral|default:"" }}" placeholder="Б. Болд"  data-msg="Гарын үсэг захиралын нэр оруулна уу" />
                                         <div id="helptext" class="form-text">Санхүүгийн тайлан дээр гарын үсэг зурах захиралын нэр.</div>
-                                    </div>
+                                    </div> -->
 
                                 {% if not pk %}
                                 <h4 class="card-title mt-2 mb-1"> Байгууллагын анхны хэрэглэгчийн мэдээлэл </h4>
@@ -192,9 +192,9 @@
                                         <button type="submit" id="salbar-btn" class="btn btn-primary">Засах</button>
                                         {% if request.user.is_superuser%}
                                             <!-- <a href="{% url 'org-superuser' pk %}" class="btn btn-success">Бүртгүүлэх</a> -->
-                                            <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#userRegister">
+                                            <!-- <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#userRegister">
                                                 Ажилтан бүртгэх
-                                            </button>
+                                            </button> -->
                                         {% endif %}
                                         {% endif %}
                                         <!-- Байгууллага утсгах үйлдэл хэрэггүй гэж үзсэн болохоор comment-олсон! -->
@@ -264,9 +264,9 @@
                                         <button type="submit" id="salbar-btn" class="btn btn-primary">Засах</button>
                                         {% if request.user.is_superuser%}
                                             <!-- <a href="{% url 'org-superuser' pk %}" class="btn btn-success">Бүртгүүлэх</a> -->
-                                            <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#userRegister">
+                                            <!-- <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#userRegister">
                                                 Ажилтан бүртгэх
-                                            </button>
+                                            </button> -->
                                         {% endif %}
                                         {% endif %}
                                         <!-- Байгууллага утсгах үйлдэл хэрэггүй гэж үзсэн болохоор comment-олсон! -->
@@ -322,15 +322,15 @@
         logoViewElement.src = window.URL.createObjectURL(event.target.files[0])
     }
 
-    todorkhoiloltSignatureElemnet.onchange = function(event) {
-        const signatureViewElement = document.getElementById("viewSubOrgSignature")
-        signatureViewElement.src = window.URL.createObjectURL(event.target.files[0])
-    }
+    // todorkhoiloltSignatureElemnet.onchange = function(event) {
+    //     const signatureViewElement = document.getElementById("viewSubOrgSignature")
+    //     signatureViewElement.src = window.URL.createObjectURL(event.target.files[0])
+    // }
 
-    todorkhoiloltTamgaElemnet.onchange = function(event) {
-        const tamgaViewElement = document.getElementById("viewSubOrgTamga")
-        tamgaViewElement.src = window.URL.createObjectURL(event.target.files[0])
-    }
+    // todorkhoiloltTamgaElemnet.onchange = function(event) {
+    //     const tamgaViewElement = document.getElementById("viewSubOrgTamga")
+    //     tamgaViewElement.src = window.URL.createObjectURL(event.target.files[0])
+    // }
 
     let wtf1 = []
     let orgmenu = $('#jstree-orgs2-menu')

@@ -73,6 +73,7 @@ from .views import (
 
     ExcelAddEmployeeCode,
     UserEmployeeRankLevelDegreeEditApiView,
+    UserLoggedSessionApiView,
 )
 
 urlpatterns = [
@@ -82,6 +83,7 @@ urlpatterns = [
     path('user-login/', LoginApiView.as_view(), name='account-user-login'),
     path('user-logout/', LogoutApiView.as_view(), name='account-user-logout'),
     path('user-reset-password/', ResetPasswordApiView.as_view(), name='account-user-password'),
+    path('user-logged-session/', UserLoggedSessionApiView.as_view(), name='user-logged-session'),
 
     path('forgot-password/', ForgotPassordApiView.as_view(), name='forgot-password'),
     path("forgot-password-send-mail/", ForgotPasswordSendMailApiView.as_view()),

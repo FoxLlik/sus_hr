@@ -94,8 +94,12 @@
                             <div class="d-flex col-lg-5 align-items-center auth-bg px-5 p-lg-5 bg-white">
                                 <div class="col-12 col-sm-8 col-md-6 col-lg-12 px-0 px-sm-0 ps-lg-5 mx-auto paddingStyle" style="z-index: 100; margin-top: -30px;">
                                     <div class="d-flex align-items-center me-5">
-                                        <img style="width: 60px" src="{% static 'app-assets/images/logo/sus_logo.png' %}"/>
-                                        <h1 style="color: black !important" class="brand-text text-primary ms-1 mb-0 fw-bolder">ХҮНИЙ НӨӨЦИЙН <br>СИСТЕМ</h1>
+                                        <img
+                                            style="width: 60px"
+                                            src="/media/{{request.employee.org.logo}}"
+                                            onerror="this.onerror=null; this.src='/media/53x53.jpg'"
+                                        />
+                                        <h1 class="brand-text text-primary ms-1 mb-0 fw-bolder">ХҮНИЙ НӨӨЦИЙН <br>СИСТЕМ</h1>
                                     </div>
                                     <p class="text-secondary fw-bold my-3">Боловсролын сургалтын байгууллагын болон суралцахуйн удирдлагын цогц системд тавтай морилно уу.</p>
                                     <h1 class="card-title fw-bolder mb-1 text-primary">НЭВТРЭХ</h1>
@@ -132,13 +136,13 @@
                                             </div>
                                         </div>
                                         <div class="text-end">
-                                            <a style="color: #097A7D; font-size: 12px;" class="fw-bolder" href="#">Нууц үгээ мартсан уу?</a>
+                                            <a style="color: #8e272b; font-size: 12px;" class="fw-bolder" href="{% url 'forgot-password' %}">Нууц үгээ мартсан уу?</a>
                                         </div>
                                         <div class="col-xl-12 col-md-12 col-12 mt-2">
                                             <button class="btn btn-primary w-100 rounded-3" type="submit" tabindex="4">Нэвтрэх</button>
                                         </div>
                                         <!-- <div class="text-end mt-2">
-                                            <span class="fw-bold" style="font-size: 12px;">Шинэ хэрэглэгчээр </span><a style="color: #097A7D; font-size: 12px;" class="fw-bolder" href="#">бүртгүүлэх</a>
+                                            <span class="fw-bold" style="font-size: 12px;">Шинэ хэрэглэгчээр </span><a style="color: #8e272b; font-size: 12px;" class="fw-bolder" href="#">бүртгүүлэх</a>
                                         </div> -->
                                     </form>
                                 </div>

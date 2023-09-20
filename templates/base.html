@@ -279,7 +279,8 @@
 							<span class="brand-logo">
 								<img
 									style="width: 34px"
-									src="{% static '/app-assets/images/logo/sus_logo.png' %}"
+									src="/media/{{request.employee.org.logo}}"
+									onerror="this.onerror=null; this.src='/media/53x53.jpg'"
 								/>
 							</span>
 							<h1 class="brand-text" style="font-size: 1.5em;" >ХҮНИЙ НӨӨЦ</h1>

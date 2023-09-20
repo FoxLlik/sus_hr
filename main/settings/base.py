@@ -138,12 +138,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'mnhrsystem@gmail.com'
-EMAIL_HOST_PASSWORD = 'quwhtfcgkptkonpi'
-# EMAIL_HOST_PASSWORD = 'Hrsystem1234'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
 ENCRYPT_KEY = b'5sy_4mJN2q4GMu3OMhLrt2WWH5eP0AK6JAYssRn-pXA='
 REST_FRAMEWORK = {
     'EXCEPTION_HANDLER': 'main.middleware.errorRFHandler.custom_exception_handler',

@@ -81,16 +81,24 @@ class OrgAPIView(APIView):
     @login_required()
     @has_permission(must_permissions=['org-read'])
     def get(self, request, pk=None):
+
+        property_type = PropertyType.objects.all().values('name', 'id')
+        educational_institution_category = EducationalInstitutionCategory.objects.all().values('name', 'id')
+
         if pk:
             self.queryset = self.queryset.get(pk=pk)
             serializer = self.serializer_class(instance=self.queryset, many=False)
 
-            property_type = PropertyType.objects.all().values('name', 'id')
-            educational_institution_category = EducationalInstitutionCategory.objects.all().values('name', 'id')
-
             return Response({ 'serializer': serializer, "pk": pk, 'user_serializer': UserFirstRegisterSerializer, 'property_type': property_type, 'educational_institution_category': educational_institution_category })
+
+        # Хэрвээ ядаж нэг байгууллага байвал тийшээгээ үсэргэнэ
+        orgs_qs = Orgs.objects.filter()
+
+        if orgs_qs.exists():
+            return redirect('org-register', pk=orgs_qs.last().id)
+
         serializer = self.serializer_class()
-        return Response({ 'serializer': serializer, 'user_serializer': UserFirstRegisterSerializer })
+        return Response({ 'serializer': serializer, 'user_serializer': UserFirstRegisterSerializer, 'property_type': property_type, 'educational_institution_category': educational_institution_category })
 
     #post
     @login_required()

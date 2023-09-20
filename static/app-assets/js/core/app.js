@@ -8,11 +8,11 @@
 ==========================================================================================*/
 window.colors = {
   solid: {
-    primary: '#097A7D',
+    primary: '#8e272b',
     secondary: '#82868b',
     success: '#28C76F',
     info: '#00cfe8',
-    warning: '#097A7D',
+    warning: '#8e272b',
     danger: '#EA5455',
     dark: '#4b4b4b',
     black: '#000',
@@ -20,11 +20,11 @@ window.colors = {
     body: '#f8f8f8'
   },
   light: {
-    primary: '#097A7D',
+    primary: '#8e272b',
     secondary: '#82868b1a',
     success: '#28C76F1a',
     info: '#00cfe81a',
-    warning: '#097A7D',
+    warning: '#8e272b',
     danger: '#EA54551a',
     dark: '#4b4b4b1a'
   }

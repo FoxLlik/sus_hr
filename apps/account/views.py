@@ -13,6 +13,7 @@ from django.shortcuts import redirect
 from django.contrib.auth.hashers import check_password
 from django.contrib.auth import login, authenticate, logout
 from django.core.mail import send_mail
+from django.contrib.sessions.models import Session
 
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -2072,3 +2073,16 @@ class ExcelAddEmployeeCode(APIView):
                         print('oldohgui bn')
 
             return request.send_data(oldohgui_humus)
+
+
+class UserLoggedSessionApiView(APIView):
+
+    def get(self, request):
+
+        active_sessions = Session.objects.filter(expire_date__gt=datetime.datetime.now())
+
+        for active_session in active_sessions:
+            if active_session.get_decoded().get('_auth_user_id'):
+                break
+
+        return request.send_data([])
