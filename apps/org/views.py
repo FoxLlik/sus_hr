@@ -1,8 +1,9 @@
 from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.views import View
-from main.decorators import login_required
 from django.db import transaction
+from django.core.mail import send_mail
+from django.core.mail import get_connection
 
 from rest_framework.views import APIView
 from rest_framework.renderers import TemplateHTMLRenderer
@@ -347,3 +348,34 @@ class OrgSystemEmailApiView(APIView):
         else:
             request.send_message('error', 'ERR_022')
             return redirect("org-register")
+
+
+class CheckEmailApiView(APIView):
+
+    @login_required()
+    def post(self, request, pk=None):
+
+        email = request.data.get('email')
+
+        if not request.org_filter.get("org").email_host or not request.org_filter.get("org").email_password:
+            raise request.send_error("ERR_024")
+
+        connection = get_connection(
+            username=request.org_filter.get("org").email_host,
+            password=request.org_filter.get("org").email_password,
+            port=587,
+            host='smtp.gmail.com',
+            use_tls=True,
+        )
+
+        send_mail(
+            'subject',
+            'text',
+            email,
+            recipient_list=[email],
+            connection=connection,
+            html_message='Амжилттай илгээгдэж байна.'
+        )
+
+        rsp = request.send_info("INF_015")
+        return rsp

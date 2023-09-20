@@ -138,4 +138,10 @@ errors = {
                     "message": "Файл оруулна уу.",
                     "status_code": 400,
                 },
+    "ERR_024":  {
+                    "code": 24,
+                    "name": "ERROR 024",
+                    "message": "Email мэдээлэл дутуу байна.",
+                    "status_code": 400,
+                },
 }

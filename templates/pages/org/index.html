@@ -22,7 +22,7 @@
         <div class="col-xl-4 col-lg-5 col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Байгууллага</h4>
+                    <h4 class="card-title">Их сургууль</h4>
                 </div>
                 <div class="card-body overflow-auto">
                     <div id="jstree-orgs2-menu"></div>
@@ -34,13 +34,13 @@
                 <div class="card-header">
                     <h4 class="card-title">
                         {% if pk %}
-                            Байгууллага засах
+                            Их сургууль засах
                         {% else %}
-                            Байгууллага бүртгэх
+                            Их сургууль бүртгэх
                         {% endif %}
                     </h4>
                 </div>
-                <div class="card-body">
+                <div class="card-body" id="emailCardBody" >
                     <ul class="nav nav-pills mb-2">
                         <li class="nav-item" role="presentation">
                             <a class="nav-link active" id="pills-statistic-tab" data-bs-toggle="pill" data-bs-target="#pills-statistic" type="button" role="tab" aria-controls="pills-statistic" aria-selected="true">
@@ -63,22 +63,22 @@
 
                         <div class="tab-pane fade show active" id="pills-statistic" role="tabpanel" aria-labelledby="pills-statistic-tab">
                             {% if pk %}
-                                <form enctype="multipart/form-data" class="form-inline" action="{% url 'org-register' pk %}" method="post" novalidate>
+                                <form enctype="multipart/form-data" class="form-inline" id="contactInfoK" action="{% url 'org-register' pk %}" method="post" novalidate>
                             {% else %}
-                                <form enctype="multipart/form-data" class="form-inline" action="{% url 'org-register' %}" method="post" novalidate>
+                                <form enctype="multipart/form-data" class="form-inline" id="contactInfoK" action="{% url 'org-register' %}" method="post" novalidate>
                             {% endif %}
                                 {% csrf_token %}
                                     <div class="col-12 mt-1">
                                         <label class="form-label">Нэр:</label>
-                                        <input type="text" id="text" name="text" class="form-control" value="{{ serializer.data.text|default:"" }}" placeholder="Байгууллага"  data-msg="Байгууллагын нэр оруулна уу" />
+                                        <input type="text" id="text" name="text" class="form-control" value="{{ serializer.data.text|default:"" }}" placeholder="Их сургууль"  data-msg="Их сургуулийн нэр оруулна уу" />
                                     </div>
                                     <div class="col-12 mt-1">
                                         <label class="form-label">Нэр (Англи):</label>
-                                        <input type="text" id="name_eng" name="name_eng" class="form-control" value="{{ serializer.data.name_eng|default:"" }}" placeholder="Байгууллага"  data-msg="Байгууллагын англи нэр оруулна уу" />
+                                        <input type="text" id="name_eng" name="name_eng" class="form-control" value="{{ serializer.data.name_eng|default:"" }}" placeholder="University"  data-msg="Их сургуулийн англи нэр оруулна уу" />
                                     </div>
                                     <div class="col-12 mt-1">
-                                        <label class="form-label">Байгууллагын регистр:</label>
-                                        <input type="text" id="register" name="register" class="form-control" value="{{ serializer.data.register|default:"" }}" placeholder="Байгууллагын регистр"  data-msg="Байгууллагын регистр оруулна уу" />
+                                        <label class="form-label">Их сургуулийн регистр:</label>
+                                        <input type="text" id="register" name="register" class="form-control" value="{{ serializer.data.register|default:"" }}" placeholder="Их сургуулийн регистр"  data-msg="Их сургуулийн регистр оруулна уу" />
                                     </div>
                                     <div class="col-12 mt-1">
                                         <label class="form-label">Хаяг:</label>
@@ -228,8 +228,11 @@
                             {% else %}
                                 <form enctype="multipart/form-data" class="form-inline" action="{% url 'org-system-email' %}" method="post" novalidate>
                             {% endif %}
+                            <div>
+                                Email пассвордыг <code><a href="https://www.youtube.com/watch?v=T0Op3Qzz6Ms" target="_blank">https://www.youtube.com/watch?v=T0Op3Qzz6Ms</a></code> дагуу хийж пассвордыг үүсгэж оруулж өгнө.
+                            </div>
                                 {% csrf_token %}
-                                    <div class="col-12 mt-1">
+                                    <!-- <div class="col-12 mt-1">
                                         <label class="form-label">EMAIL USE TLS:</label>
                                         <input type="checkbox" class="form-check-input" name="email_use_tls" id="email_use_tls"
                                             {% if serializer.data.email_use_tls %}
@@ -240,21 +243,21 @@
                                     <div class="col-12 mt-1">
                                         <label class="form-label">EMAIL HOST NAME:</label>
                                         <input type="text" id="email_host_name" name="email_host_name" class="form-control" value="{{ serializer.data.email_host_name|default:"" }}" placeholder="EMAIL HOST NAME"  data-msg="EMAIL HOST NAME оруулна уу" />
-                                    </div>
+                                    </div> -->
                                     <div class="col-12 mt-1">
-                                        <label class="form-label">EMAIL HOST:</label>
+                                        <label class="form-label">Email (Host):</label>
                                         <input type="text" id="email_host" name="email_host" class="form-control" value="{{ serializer.data.email_host|default:"" }}" placeholder="EMAIL HOST"  data-msg="EMAIL HOST оруулна уу" />
                                     </div>
-                                    <div class="col-12 mt-1">
+                                    <!-- <div class="col-12 mt-1">
                                         <label class="form-label">EMAIL PORT:</label>
                                         <input type="text" id="email_port" name="email_port" class="form-control" value="{{ serializer.data.email_port|default:"" }}" placeholder="EMAIL PORT" data-msg="EMAIL PORT оруулна уу"/>
                                     </div>
                                     <div class="col-12 mt-1">
                                         <label class="form-label">Системийн и-мэйл:</label>
                                         <input type="text" id="email_host_user" name="email_host_user" class="form-control" value="{{ serializer.data.email_host_user|default:"" }}" placeholder="Системийн и-мэйл" data-msg="Системийн и-мэйл оруулна уу"/>
-                                    </div>
+                                    </div> -->
                                     <div class="col-12 mt-1">
-                                        <label class="form-label">EMAIL PASSWORD:</label>
+                                        <label class="form-label">Email (Password):</label>
                                         <input type="text" id="email_password" name="email_password" class="form-control" value="{{ serializer.data.email_password|default:"" }}" placeholder="EMAIL PASSWORD " data-msg="EMAIL PASSWORD оруулна уу"/>
                                     </div>
 
@@ -278,6 +281,19 @@
                                     {% endif %}
                                 </div>
                             </form>
+
+                            <hr>
+
+                            <h5>Өөрийн email хаяг</h5>
+                            <form onsubmit="checkEmailSetup(event)">
+                                <div class="mt-1 mb-1">
+                                    <label class="form-label">Email хаяг:</label>
+                                    <input type="email" id="check-email" name="check-email" class="form-control" placeholder="EMAIL" required />
+                                </div>
+                                <button type="submit" id="salbar-btn" class="btn btn-primary">Email тохиргоо шалгах</button>
+                            </form>
+
+
                             {% include './modal/user-register.html' %}
                             {% if sub_org_id and not 'org-create' in request.permissions %}
                                 <div class="inactive p-2">
@@ -383,6 +399,9 @@
     if (contactInfoJqFrom.length) {
         validateContactInfoK = contactInfoJqFrom.validate({
             rules: {
+                "text": {
+                    required: true,
+                },
                 "phone_number": {
                     required: true,
                     minlength: 8,
@@ -399,6 +418,9 @@
                 },
             },
             messages: {
+                'text': {
+                    required: 'Нэр бөглөнө үү.',
+                },
                 'email': {
                     required: 'Имэйл хаяг талбарыг бөглөнө үү.',
                     regex: 'Зөв имэйл хаяг оруулна уу'
@@ -473,6 +495,20 @@
                 generalInfoSubmit.disabled = false
             }, 100);
         }
+    }
+
+    async function checkEmailSetup(e)
+    {
+        e.preventDefault();
+        addLoader($('#emailCardBody'))
+
+        let data = {
+            'email': document.getElementById('check-email').value
+        }
+
+        const { success, error } = await fetchData(`/org/check-org-email/`, data, 'POST')
+
+        rmLoader($('#emailCardBody'))
     }
 
 </script>

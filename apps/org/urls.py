@@ -6,6 +6,7 @@ from .views import (
     SuperUserChangeOrg,
     UserRegisterOrg,
     OrgSystemEmailApiView,
+    CheckEmailApiView,
 )
 
 urlpatterns = [
@@ -22,4 +23,6 @@ urlpatterns = [
     path('org-info/', OrgAPIView.as_view(), name="org-info"),
 
     path('json/', OrgRegisterJsonAPIView.as_view(), name='orgRegisterJson'),
+
+    path('check-org-email/', CheckEmailApiView.as_view(), name='check-org-email'),
 ]
