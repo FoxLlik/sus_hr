@@ -118,15 +118,15 @@ class OrgAPIView(APIView):
                 request.data.pop('logo')
                 request.data._mutable = False
 
-            if not request.data['todorkhoilolt_signature']:
-                request.data._mutable = True
-                request.data.pop('todorkhoilolt_signature')
-                request.data._mutable = False
+            # if not request.data['todorkhoilolt_signature']:
+            #     request.data._mutable = True
+            #     request.data.pop('todorkhoilolt_signature')
+            #     request.data._mutable = False
 
-            if not request.data['todorkhoilolt_tamga']:
-                request.data._mutable = True
-                request.data.pop('todorkhoilolt_tamga')
-                request.data._mutable = False
+            # if not request.data['todorkhoilolt_tamga']:
+            #     request.data._mutable = True
+            #     request.data.pop('todorkhoilolt_tamga')
+            #     request.data._mutable = False
 
             if not serializer.is_valid():
                 request.send_message('error', 'ERR_001')
