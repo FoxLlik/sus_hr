@@ -425,8 +425,8 @@ input:focus ~ .bg-light {
 }
 
 .btn-primary {
-  border-color : #8e272b !important;
-  background-color : #8e272b !important;
+  border-color : #036c86 !important;
+  background-color : #036c86 !important;
   color : #FFFFFF !important;
 }
 
@@ -588,7 +588,7 @@ input:focus ~ .bg-light {
 }
 
 .progress-bar-primary .progress-bar {
-  background-color : #C2363C;
+  background-color : #03a3a2;
 }
 
 .timeline .timeline-point-primary {

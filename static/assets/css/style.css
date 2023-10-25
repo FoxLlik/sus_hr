@@ -275,7 +275,7 @@ html.light-layout div.dtfc-right-top-blocker {
 }
 
 .card-border .selected{
-	border: 1px solid #C2363C !important;
+	border: 1px solid #03a3a2 !important;
 	background-color: red;
 }
 
@@ -290,7 +290,7 @@ html.light-layout div.dtfc-right-top-blocker {
 	height: 120px;
 	margin: 0 auto;
 	position: relative;
-	border: 8px solid #C2363C;
+	border: 8px solid #03a3a2;
 	border-radius: 50%;
 	/* 097A7D */
   }
@@ -305,7 +305,7 @@ html.light-layout div.dtfc-right-top-blocker {
 	width: 12px;
 	height: 12px;
 	margin: -6px 0 0 -6px;
-	background: #8e272b;
+	background: #036c86;
 	border-radius: 6px;
 	content: "";
 	display: block;
@@ -316,7 +316,7 @@ html.light-layout div.dtfc-right-top-blocker {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	background: #8e272b;
+	background: #036c86;
 	border-radius: 4px 0 0 4px;
   }
   .circle .face .minute, .circle .face .second {
@@ -486,7 +486,7 @@ html.light-layout div.dtfc-right-top-blocker {
 }
 
 .survey-kind.active {
-	border: 2px solid #C2363C;
+	border: 2px solid #03a3a2;
 }
 .profileImageContainer{
 	position: relative;
@@ -564,7 +564,7 @@ html.light-layout div.dtfc-right-top-blocker {
 	display: inline-block;
 	position: relative;
 	border: 2px solid;
-	border-color: #8e272b #8e272b transparent;
+	border-color: #036c86 #036c86 transparent;
 	box-sizing: border-box;
 	animation: rotation 1s linear infinite;
 }
