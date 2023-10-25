@@ -231,6 +231,7 @@ class SubOrgs(models.Model):
     """
 
     org = models.ForeignKey(Orgs, on_delete=models.CASCADE, verbose_name='Байгууллага сонгох')
+    org_code = models.CharField(max_length=2, null=True, unique=True, blank=True, verbose_name="Байгууллагын код")
 
     name = models.CharField(max_length=250, verbose_name='Байгууллага нэр:', null=False)
     name_eng = models.CharField(max_length=500, null=True, blank=True, verbose_name="Байгууллага нэр англи")
